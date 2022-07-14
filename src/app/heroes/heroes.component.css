@@ -142,3 +142,14 @@ button.delete:hover {
   background-color: #525252;
   color: white;
 }
+
+button.edit{
+  position: absolute;
+  left: 160px;
+  top: 5px;
+  background-color: white;
+  color:  #525252;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 1px 10px 3px 10px;
+}
