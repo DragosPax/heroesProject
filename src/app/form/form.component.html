@@ -1,0 +1,47 @@
+<form class="form-container" #form="ngForm">
+<h1>My first form!</h1>
+
+<label for="name">Enter your name:</label>
+<input type="text"  class='btn btn-outline-primary'name="name" [(ngModel)]="userSettings.name"> <br>
+
+<label for="email">Enter your email:</label>
+<input type="text"  class='btn btn-outline-primary'name="email" [(ngModel)]="userSettings.email"> <br>
+
+<label for="phone">Enter your phone number: </label>
+<input type="text"  class='btn btn-outline-primary' name="phone" [(ngModel)]="userSettings.phone"> <br>
+
+<label for="education">Choose your age</label>
+<select name="education" id="education" [(ngModel)]="userSettings.age">
+    <option value="25">18-25</option>
+    <option value="40">26-40</option>
+    <option value="60">41-60</option>
+    <option value="100">60+</option>
+</select>
+
+<div style="display:inline-block">
+<p>Choose your occupation</p>
+<input type="radio" name="education" value="student" [(ngModel)]="userSettings.occupation">
+<label for="occupation"  >student</label> <br>
+
+<input type="radio" name="education" value="employee" [(ngModel)]="userSettings.occupation">
+<label for="occupation">employee</label> <br>
+
+<input type="radio" name="education" value="entrepreneur" [(ngModel)]="userSettings.occupation">
+<label for="occupation">entrepreneur</label> <br> 
+
+</div>
+<br>
+<div style="display:inline-block">
+<input type="checkbox" name="email2" value="Abonare" [(ngModel)]="userSettings.subscription">
+<label  for="email2">Subscribe with your email</label>
+</div> <br>
+
+<ngb-datepicker #d></ngb-datepicker>
+<ngb-timepicker ></ngb-timepicker>
+
+<button type="submit" value="submit" id="submit" class="btn-check" (click)="onSubmit()">Submit</button>
+
+</form>
+
+<h2 id="info">{{userSettings|json}}</h2>
+

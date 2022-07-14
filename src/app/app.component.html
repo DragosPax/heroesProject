@@ -1,8 +1,16 @@
-<h1>{{title}}</h1>
+<h1 style="background-color:antiquewhite;width:200px;"> {{title}}</h1>
+<h2 style="background-color:aqua;width:200px;">{{valoare}}</h2>
 <nav>
-    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/dashboard">Dashboard</a> &nbsp;
     <a routerLink="/heroes">Heroes</a>
+    <button class="btn btn-primary" style="display:block;margin:0px auto;" (click)="navigate()">Go to {{page}}</button>
+
     
 </nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+<app-messages [name]="title" (notify)="onNotify($event)"></app-messages>
+<!-- <app-form [userSettings.name]="defaultName"></app-form> -->
+
+
+
+<app-weather></app-weather>

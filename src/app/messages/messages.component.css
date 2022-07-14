@@ -17,3 +17,9 @@ h2 {
     color: white;
     background-color: #42545C;
   }
+  p{
+    width:300px;
+    background-color: antiquewhite;
+    text-align: center;
+    margin-top:10px;
+}
