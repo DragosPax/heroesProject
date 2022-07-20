@@ -1,0 +1,47 @@
+<form [formGroup]="myForm" id="form" style="text-align:center">
+  <p>values {{ myForm.value | json }}</p>
+
+  <label for="name">Enter Hero's name :&nbsp; </label>
+  <input formControlName="name" name="name" type="text" />
+  <!-- <p *ngIf!="name.invalid">Too short</p> --> 
+    <br>
+  <label for="age" >Enter his age &nbsp;</label>
+    <input type="text" name="age" formControlName="age" style="width:50px;">
+  <br>
+    <label for="power">Choose his power &nbsp;</label>
+    <select name="power" formControlName="power">
+        <option value="strong">Strong</option>
+        <option value="strong">Smart</option>
+        <option value="strong">Worker</option>
+        
+    </select>
+   
+    
+    <br>
+    <ngb-datepicker  formControlName="date"></ngb-datepicker>
+
+    <br>
+    <ngb-timepicker formControlName="time" style="position:relative;left:45%"></ngb-timepicker>
+
+    <br>
+    
+    <input type="checkbox" name="cars" value="cars" formControlName="cars"> &nbsp;
+    <label for="cars">Do you like cars?</label>
+<br> <br>
+
+    <p>Select your favorite thing:</p>
+    <input type="radio" id="html" name="fav_language" value="HTML">
+    <label for="html">HTML</label><br>
+    <input type="radio" id="css" name="fav_language" value="CSS">
+    <label for="css">CSS</label><br>
+    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+    <label for="javascript">JavaScript</label>
+
+  <br />
+
+  <a routerLink="/table" style="background-color:lightblue">-->Go to the Table &lt;--</a>
+  <br>
+  <button [disabled]="myForm.invalid" (click)="add()">Click</button>
+
+
+</form>
