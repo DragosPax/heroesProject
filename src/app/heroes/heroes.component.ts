@@ -9,7 +9,8 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent implements OnInit {
-  //heroes: Hero[] = [];
+  heroes: Hero[] = [];
+
 
   constructor(public heroService: HeroService) {}
 
@@ -19,7 +20,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe((heroes) => {
-      this.heroService.heroes = heroes;
+      this.heroes = heroes;
     });
   }
 
@@ -29,24 +30,24 @@ export class HeroesComponent implements OnInit {
       return;
     }
     this.heroService.addHero({ name } as Hero).subscribe((hero) => {
-      this.heroService.heroes.push(hero);
+      this.heroes.push(hero);
     });
   }
 
   delete(hero: Hero): void {
-    this.heroService.heroes = this.heroService.heroes.filter((h) => h !== hero);
+    this.heroes = this.heroes.filter((h) => h !== hero);
     this.heroService
       .deleteHero(hero.id)
       .subscribe(() => console.log(`deleted hero id=${hero.id}`));
   }
 
   edit(hero: Hero): void {
-    this.heroService.heroes.map((h) => {
+    this.heroes.map((h) => {
       if (h === hero) {
         h.name = h.name + '$';
       }
     });
     this.heroService.editHero(hero).subscribe();
-    console.log(this.heroService.heroes);
+    console.log(this.heroes);
   }
 }

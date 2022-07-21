@@ -3,19 +3,28 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      
       <th scope="col">Name</th>
+      <th scope="col">Age</th>
       <th scope="col">Power</th>
+      <th scope="col">Time</th>
+      <th scope="col">Date</th>
       <th scope="col">Likes-Cars?</th>
+      
+
     </tr>
   </thead>
   <tbody>
  
-    <tr *ngFor="let hero of heroService.heroes; index as i">
-      <th scope="row">{{i+1}}</th>
-      <td>{{ hero.name }}</td>
-      <td>{{ hero.power }}</td>
-      <td>{{ hero.cars }}</td>
+    <tr *ngFor="let hero of heroService.heroes; index as i" >
+      
+      <td >{{ hero.name }}</td>
+      <td >{{ hero.age }}</td>
+      <td >{{ hero.power }}</td>
+      <td >{{displayTime(hero)}}</td>
+      <td >{{ displayDate(hero) }}</td>
+      <td >{{ hero.cars }}</td>
+      
     </tr>
   </tbody>
 </table>

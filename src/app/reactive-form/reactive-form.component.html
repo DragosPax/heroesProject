@@ -4,9 +4,13 @@
   <label for="name">Enter Hero's name :&nbsp; </label>
   <input formControlName="name" name="name" type="text" />
   <!-- <p *ngIf!="name.invalid">Too short</p> --> 
+  <p *ngIf="myForm.get('name')?.hasError('minlength')" class="text-danger">Minlength>3</p>
     <br>
   <label for="age" >Enter his age &nbsp;</label>
     <input type="text" name="age" formControlName="age" style="width:50px;">
+    <p *ngIf="myForm.get('age')?.invalid" class="text-danger">Invalid</p>
+    <p *ngIf="myForm.get('age')?.hasError('pattern')" class="text-danger">Numbers Only</p>
+    <p *ngIf="myForm.get('age')?.hasError('maxlength')" class="text-danger">maxlength</p>
   <br>
     <label for="power">Choose his power &nbsp;</label>
     <select name="power" formControlName="power">
